@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>날씨 결과</title>
+    <title>Weather Result</title>
   </head>
   <body>
-    <h1>{{city}}의 현재 기온</h1>
-    <p>온도: {{temperature}} °C</p>
-    <p>체감 온도: {{feels_temp}} °C</p>
+    <h1>Weather in {{city}}</h1>
+    <p>온도: {{temp}} °C</p>
+    <p>체감 온도: {{feels_like}} °C</p>
+
+    <iframe
+      src="{{ url_for('static', filename='weather_map.html')}}"
+      height="400"
+      width="600"
+    ></iframe>
   </body>
 </html>
