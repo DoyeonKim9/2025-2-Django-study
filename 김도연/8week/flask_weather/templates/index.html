@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>도시 날씨 알리미</title>
+    <title>Weather App</title>
   </head>
   <body>
-    <h1>도시 날씨 정보</h1>
-    <form method="POST" action="/">
-      <label>도시 이름을 입력하세요.</label>
-      <input text="text" name="city" id="city" required />
-      <input type="submit" value="날씨 조회" />
+    <h1>Weather App</h1>
+    <form action="/" method="POST">
+      <label for="city">도시:</label>
+      <input type="text" id="city" name="city" required />
+      <button type="submit">조회</button>
     </form>
+
+    <h2>저장된 날씨 정보</h2>
+    <ul>
+      {% for weather in weather_list %}
+      <li>
+        {{ weather.city }}: {{ weather.temperature }}°C 체감 온도
+        {{weather.feels_temp}}°C
+      </li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
